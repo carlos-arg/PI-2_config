@@ -6,6 +6,11 @@ spring:
     name: api-user
   main:
     allow-circular-references: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 eureka:
   instance:
     hostname: localhost
