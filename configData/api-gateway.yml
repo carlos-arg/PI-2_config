@@ -12,6 +12,9 @@ spring:
 #            issuer-uri: http://localhost:8089/realms/account-realm
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       default-filters:
         - TokenRelay
       routes:
