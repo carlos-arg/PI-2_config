@@ -15,8 +15,8 @@ spring:
       discovery:
         locator:
           enabled: true
-      default-filters:
-        - TokenRelay
+#      default-filters:
+#        - TokenRelay
       routes:
         - id: api-user
           uri: lb://api-user
