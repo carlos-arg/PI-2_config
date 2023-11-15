@@ -23,7 +23,7 @@ spring:
           predicates:
             - Path=/users/**
         - id: api-event
-          uri: lb://api-event
+          uri: http://localhost:8087
           predicates:
             - Path=/events/**
         - id: api-company
@@ -33,6 +33,7 @@ spring:
 info:
   app:
     name: ${spring.application.name}
+
 eureka:
   client:
     registerWithEureka: false
@@ -47,11 +48,3 @@ eureka:
       web:
         exposure:
           include: gateway
-#management:
-#  endpoint:
-#    gateway:
-#      enable: true
-#  endpoints:
-#    web:
-#      exposure:
-#        include: gateway
