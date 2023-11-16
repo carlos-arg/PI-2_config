@@ -11,10 +11,10 @@ spring:
 #          keycloak-provider:
 #            issuer-uri: http://localhost:8089/realms/account-realm
   cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
 #      default-filters:
 #        - TokenRelay
       routes:
