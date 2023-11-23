@@ -18,3 +18,5 @@ eureka:
 info:
   app:
     name: ${spring.application.name}
+jwt:
+  expiration: 86400
