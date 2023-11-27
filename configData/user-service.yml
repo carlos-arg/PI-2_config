@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: api-user
+    name: user-service
   main:
     allow-circular-references: true
 
