@@ -36,6 +36,20 @@ spring:
             client-secret: CaZ4vUhbOAUuCKBV2rmVF4aUzlDpngz3
             redirect-uri: http://localhost:8086/login/oauth2/code/keycloak
 
+dh:
+  keycloak:
+    auth-server-url: http://localhost:8082
+  master:
+    realm: master
+    username: admin
+    password: admin
+    clientId: admin-cli
+  nuevoReino:
+    realm: masterEvents
+    new_username: user
+    new_password: password
+    new_realm_roles: USER
+
 eureka:
   instance:
     hostname: localhost
