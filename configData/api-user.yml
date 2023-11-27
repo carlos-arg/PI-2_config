@@ -1,0 +1,47 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: api-user
+  main:
+    allow-circular-references: true
+
+  datasource:
+    #    --> DB Cloud
+    url: jdbc:mysql://db.ctd.academy:3306/pi21023c02_GRUPO3
+    username: pi21023c02_GRUPO3
+    password: oof2Eile
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    --> DB Local
+    #    url: jdbc:mysql://localhost:3306/EMarket
+    #    username: root
+    #    password: T15F1542
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+  # Keycloak
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/masterEvents
+        registration:
+          keycloak:
+            client-id: clientUsers
+            client-secret: CaZ4vUhbOAUuCKBV2rmVF4aUzlDpngz3
+            redirect-uri: http://localhost:8086/login/oauth2/code/keycloak
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
