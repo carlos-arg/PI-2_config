@@ -6,6 +6,20 @@ spring:
     name: api-event
   main:
     allow-circular-references: true
+
+  # Keycloak
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/masterEvents
+        registration:
+          keycloak:
+            client-id: clientEvents
+            client-secret: D5XMwh0Se35XdFxI839xqdLTMxQ8JtEG
+            redirect-uri: http://localhost:8087/login/oauth2/code/keycloak
+
 eureka:
   instance:
     hostname: localhost
