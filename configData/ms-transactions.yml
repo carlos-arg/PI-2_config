@@ -1,6 +1,6 @@
 server:
   port:
-    8091
+    8085
 spring:
   application:
     name: ms-transactions
