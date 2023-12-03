@@ -1,0 +1,39 @@
+server:
+  port:
+    8091
+spring:
+  application:
+    name: api-transactions
+  main:
+    allow-circular-references: true
+
+  # Keycloak
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/masterEvents
+        registration:
+          keycloak:
+            client-id: clientTransaction
+            client-secret: q3HYM8kFN8bKJbbTgEyN9cihmMc0t8YE
+            redirect-uri: http://localhost:8087/login/oauth2/code/keycloak
+
+
+stripe:
+  key:
+    public: pk_test_51OHrFiDddpByuwQCuIym56qPGbdJAHFTyVdQ93Goz7eyLVbRArIlDI8edZxPbeZv1I9HovqPFXGoCJxEGuvnTYjW007tf77uGj
+    secret: sk_test_51OHrFiDddpByuwQCIGBe4U6gxoeqOogj3GGuWyKIIEwnySPyTSFFHi8p62Eoiz6YPAVDN0yeyZWuvWNX0Y37uFVC00i3Rto7ys
+
+
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka

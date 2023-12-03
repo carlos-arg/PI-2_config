@@ -36,10 +36,10 @@ spring:
           uri: lb://api-event
           predicates:
             - Path=/event/**
-#        - id: api-company
-#          uri: lb://api-company
-#          predicates:
-#            - Path=/company/**
+        - id: api-transactions
+          uri: lb://ms-transactions
+          predicates:
+            - Path=/stripe/**
 
 info:
   app:
