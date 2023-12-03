@@ -3,7 +3,7 @@ server:
     8091
 spring:
   application:
-    name: api-transactions
+    name: ms-transactions
   main:
     allow-circular-references: true
 
@@ -18,7 +18,7 @@ spring:
           keycloak:
             client-id: clientTransaction
             client-secret: q3HYM8kFN8bKJbbTgEyN9cihmMc0t8YE
-            redirect-uri: http://localhost:8087/login/oauth2/code/keycloak
+            redirect-uri: http://localhost:8091/login/oauth2/code/keycloak
 
 
 stripe:

@@ -36,7 +36,7 @@ spring:
           uri: lb://api-event
           predicates:
             - Path=/event/**
-        - id: api-transactions
+        - id: ms-transactions
           uri: lb://ms-transactions
           predicates:
             - Path=/stripe/**
